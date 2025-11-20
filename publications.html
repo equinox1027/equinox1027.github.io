@@ -1,0 +1,55 @@
+---
+layout: default
+title: "Publications"
+permalink: /publications
+sitemap: true
+---
+<div class="container">
+    <h1 class="catery">Publications</h1>
+    <div class="publications">
+        {% for publications-year in site.data.publications %}
+        <div class="publications-content">
+            <div class="publications-year">{{ publications-year.year }}</div>
+            <div class="publications-list">
+                {% for publication in publications-year.papers %}
+                <div class="publication">
+                    {% if publication.url %}
+                    <a href="{{ publication.url }}" target="_blank" class="publication-title">{{ publication.title }}</a>
+                    {% else %}
+                    <div class="publication-title">{{ publication.title }}</div>
+                    {% endif %}
+                    <div class="publication-authors">
+                        {% assign authorslist = publication.authors | split: ", " %}
+                        {% assign authors = "" %}
+                        {% for author in authorslist %}
+                            {% assign compareAuthor = author | downcase %}
+                            {% assign authorFound = false %}
+                            {% for person in site.people %}
+                                {% assign personName = person.name | split: ' ' | first | downcase %}
+                                {% assign personLastName = person.name | split: ' ' | last | downcase %}
+                                {% if compareAuthor contains personName and compareAuthor contains personLastName %}
+                                    {% assign authorFound = true %}
+                                    {% assign memberurl = site.url | append: site.baseurl | append: person.url %}
+                                    {% if person.position == 'Professor' %}
+                                        {% assign memberurl = 'https://seungwonh.github.io/' %}
+                                    {% endif %}
+                                    {% break %}
+                                {% endif %}
+                            {% endfor %}
+                            {% if authorFound %}
+                                {% assign authors = authors | append: '<a href="' | append: memberurl | append: '">' | append: author | append: '</a>, ' %}
+                            {% else %}
+                                {% assign authors = authors | append: author | append: ', ' %}
+                            {% endif %}
+                        {% endfor %}
+                        {% assign authors = authors | append: "@" | replace: ", @", "." %}
+                        {{ authors }}
+                    </div>
+                    <div class="publication-venue">{{ publication.venue }}</div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

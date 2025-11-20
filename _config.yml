@@ -1,0 +1,31 @@
+title: "NSAILab - SZU"
+tagline: "Neuro-Symbolic Artificial Intelligence Laboratory"
+description: "Neuro-Symbolic Artificial Intelligence at ShenZhen University"
+logo: "/assets/images/ldi-logo.svg"
+exclude: ['README.md', 'Gemfile.lock', 'Gemfile']
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+collections:
+  people:
+    output: true
+  projectpage:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "people"
+    values:
+      layout: "person"
+      permalink: /person/:path/
+      sitemap: true
+  - scope:
+      path: ""
+      type: "projectpage"
+    values:
+      layout: "projectpage"
+      permalink: /project/:path/
+      sitemap: true
