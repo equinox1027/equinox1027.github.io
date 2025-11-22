@@ -1,39 +1,81 @@
-<footer>
-  <div class="footer-container">
-    <div class="footer-logos">
-      <img src="{{ site.url }}{{ site.baseurl }}/assets/images/snu-logo.svg" alt="SNU Logo">
-    </div>
-    <div class="footer-info">
-      <p>
-        Language and Data Intelligence, <a href="https://cse.snu.ac.kr/en">Department of Computer Science and
-          Engineering</a>, <a href="https://eng.snu.ac.kr/snuEng/main/main.do">College of Engineering</a>, <a
-          href="https://en.snu.ac.kr/">Seoul National University</a>
+{% assign lab = site.data.lab %}
+
+<footer class="site-footer">
+  <div class="footer-inner">
+
+    <!-- 左列：实验室名称 -->
+    <div class="footer-column footer-lab">
+      <h3 class="footer-lab-name-en">
+        {{ lab.full_name_en | default: site.title }}
+      </h3>
+      {% if lab.full_name_cn %}
+      <p class="footer-lab-name-cn">
+        {{ lab.full_name_cn }}
       </p>
-      <p>1 Gwanak-ro, Gwanak-gu, Seoul 08826, Republic of Korea</p>
-      <p>서울특별시 관악구 관악로 1 서울대학교 공과대학 컴퓨터공학부</p>
-      <p class="copyrights">
-        &copy; Copyright 2024</p>
+      {% endif %}
+      <p class="footer-affiliation">
+        {{ lab.department_en }}, {{ lab.university_en }}
+      </p>
     </div>
+
+    <!-- 中列：地址 & 联系方式 -->
+    <div class="footer-column footer-contact">
+      <h4>Contact</h4>
+      <p class="footer-address">
+        {% if lab.address_en_line1 %}{{ lab.address_en_line1 }}<br>{% endif %}
+        {% if lab.address_en_line2 %}{{ lab.address_en_line2 }}{% endif %}
+      </p>
+
+      <ul class="footer-contact-list">
+        {% if lab.email_general %}
+        <li>Email (Lab): <a href="mailto:{{ lab.email_general }}">{{ lab.email_general }}</a></li>
+        {% endif %}
+        {% if lab.email_pi %}
+        <li>Email (PI): <a href="mailto:{{ lab.email_pi }}">{{ lab.email_pi }}</a></li>
+        {% endif %}
+        {% if lab.phone %}
+        <li>Phone: {{ lab.phone }}</li>
+        {% endif %}
+      </ul>
+    </div>
+
+    <!-- 右列：链接 / 微信二维码 -->
+    <div class="footer-column footer-links">
+      <h4>Links</h4>
+      <ul class="footer-link-list">
+        <li><a href="{{ '/' | relative_url }}">Home</a></li>
+        <li><a href="{{ '/people/' | relative_url }}">People</a></li>
+        <!-- <li><a href="{{ '/projects/' | relative_url }}">Projects</a></li> -->
+        <li><a href="{{ '/publications/' | relative_url }}">Publications</a></li>
+        {% if lab.website_cn %}
+        <li><a href="{{ lab.website_cn }}" target="_blank" rel="noopener">Chinese Website</a></li>
+        {% endif %}
+        {% if lab.github %}
+        <li><a href="{{ lab.github }}" target="_blank" rel="noopener">GitHub</a></li>
+        {% endif %}
+      </ul>
+
+      {% if lab.wechat_qr %}
+      <div class="footer-wechat">
+        <p>WeChat Official Account{% if lab.wechat_name %}: {{ lab.wechat_name }}{% endif %}</p>
+        <img src="{{ lab.wechat_qr | relative_url }}" alt="WeChat QR code">
+      </div>
+      {% endif %}
+    </div>
+
   </div>
+
+  <div class="footer-bottom">
+    <p>
+      ©
+      {% if lab.copyright_year %}
+      {{ lab.copyright_year }}
+      {% else %}
+      {{ site.time | date: "%Y" }}
+      {% endif %}
+      {{ lab.short_name | default: site.title }}.
+      All rights reserved.
+    </p>
+  </div>
+
 </footer>
-
-<script>
-  const toggleBtn = document.querySelector('.toggle-btn');
-  const navLinksContainer = document.querySelector('.nav-links-container');
-
-  toggleBtn.addEventListener('click', () => {
-    navLinksContainer.classList.toggle('show-nav');
-  });
-
-  function switchColorTheme() {
-    var currentTheme = document.documentElement.getAttribute("data-theme");
-    var switchBtn = document.querySelector('.language-switch');
-    if (currentTheme == "dark") {
-      document.documentElement.setAttribute("data-theme", "light");
-      localStorage.setItem("theme", "light");
-    } else {
-      document.documentElement.setAttribute("data-theme", "dark");
-      localStorage.setItem("theme", "dark");
-    }
-  }
-</script>

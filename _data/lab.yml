@@ -1,0 +1,26 @@
+# _data/lab.yml
+
+short_name: "NSAI Lab"
+full_name_en: "Neuro-Symbolic Artificial Intelligence Laboratory"
+full_name_cn: "深圳大学神经符号人工智能实验室"
+
+department_en: "College of Artificial Intelligence"
+university_en: "Shenzhen University"
+
+# 地址可以分两行，国内实验室一般这么写
+address_en_line1: "Nanhai Ave No.3688, Nanshan District"
+address_en_line2: "Shenzhen 518060, Guangdong, China"
+
+# 联系方式（TODO: 换成你们实验室的）
+email_general: "lab-email@szu.edu.cn"
+email_pi: 
+phone: "+86-XXX-XXXX-XXXX"
+
+# 可选：社交/链接
+website_cn:           # 如果有学校中文主页
+github: ""              # 如果有实验室 GitHub org
+wechat_name:          # 公众号名字（可选）
+wechat_qr:            # 微信二维码图片路径，例如 /assets/img/wechat-qr.png
+
+# 版权年份
+copyright_year: 2025

@@ -1,0 +1,17 @@
+- year: 2025
+  papers:
+    - title: "Relation-Faceted Graph Pooling with LLM Guidance for Dynamic Span-Aware Information Extraction"
+      authors: "Hye-Yoon Baek, Jinho Choi, Jimyeung Seo, Xiongnan Jin, Dongcheon Lee, Byungkook Oh"
+      venue: "CIKM 2025"
+      url: "https://dl.acm.org/doi/abs/10.1145/3746252.3761243"
+    - title: "STEP: Stepwise Curriculum Learning for Context-Knowledge Fusion in Conversational Recommendation"
+      authors: "Hye-Yoon Baek, Jinho Choi, Jimyeung Seo, Xiongnan Jin, Dongcheon Lee, Byungkook Oh"
+      venue: "CIKM 2025"
+      url: "https://dl.acm.org/doi/abs/10.1145/3746252.3761186"
+
+- year: 2024
+  papers:
+    - title: "xxx"
+      authors: "xxx"
+      venue: "xxx"
+      url: "xxx"

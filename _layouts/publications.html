@@ -1,0 +1,34 @@
+---
+layout: default
+---
+
+<section class="home-section">
+  <h1 class="page-title">Publications</h1>
+  <p class="page-subtitle">
+    Selected publications of NSAI Lab members. Authors with NSAI Lab affiliation are highlighted.
+  </p>
+
+  {% for group in site.data.publications %}
+  <h2 class="pub-year">{{ group.year }}</h2>
+
+  <ul class="pub-list">
+    {% for p in group.papers %}
+    <li class="pub-item">
+      <span class="pub-title">{{ p.title }}</span><br>
+      <span class="pub-authors">{{ p.authors }}</span><br>
+      <span class="pub-venue">{{ p.venue }}</span>
+      {% if p.url %}
+      <a href="{{ p.url }}" target="_blank" rel="noopener">[paper]</a>
+      {% endif %}
+      {% if p.code %}
+      <a href="{{ p.code }}" target="_blank" rel="noopener">[code]</a>
+      {% endif %}
+      {% if p.note %}
+      <span class="pub-tag">{{ p.note }}</span>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+
+  {% endfor %}
+</section>

@@ -1,0 +1,619 @@
+/* 让整个页面别太贴边 */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  line-height: 1.6;
+}
+
+/* 限制内容宽度 */
+main {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+/* 顶部导航条 */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #ffffff;
+  border-bottom: 1px solid #eee;
+}
+
+/* nav 内部左右排布 */
+.nav-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* logo 部分 */
+.logo a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.logo-text {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* 导航链接横向布局 */
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.2rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.nav-link:hover {
+  color: #0070f3;
+}
+
+/* 当前页面高亮 */
+.nav-link-active {
+  font-weight: 600;
+  border-bottom: 2px solid #0070f3;
+  padding-bottom: 0.1rem;
+}
+
+/* 简单 mobile 响应式（小屏时让 nav 稍微紧凑一点） */
+@media (max-width: 600px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+}
+
+/* ========================= */
+/* Home page                 */
+/* ========================= */
+
+.hero {
+  margin-bottom: 2.5rem;
+}
+
+.hero-kicker {
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.hero-title {
+  font-size: 2.1rem;
+  margin: 0 0 0.75rem;
+}
+
+.hero-subtitle {
+  margin: 0.3rem 0;
+  font-size: 1rem;
+  color: #444;
+}
+
+.hero-subtitle-cn {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* 通用 section 样式 */
+
+.home-section {
+  margin-bottom: 2.5rem;
+}
+
+.home-section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.home-section p {
+  margin: 0.3rem 0;
+}
+
+/* Research section */
+
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.research-card {
+  padding: 1.1rem 1.2rem;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  background: #fafafa;
+}
+
+.research-card h3 {
+  margin-top: 0;
+  font-size: 1.05rem;
+}
+
+.research-card ul {
+  margin: 0.4rem 0 0.3rem;
+  padding-left: 1.2rem;
+}
+
+.research-note {
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.research-subsection h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.4rem;
+}
+
+.research-subsection ul {
+  margin: 0.2rem 0 0;
+  padding-left: 1.2rem;
+}
+
+/* Projects section */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  padding: 1.1rem 1.2rem;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  background: #ffffff;
+}
+
+.project-card h3 {
+  margin-top: 0;
+  font-size: 1.05rem;
+}
+
+.project-meta {
+  font-size: 0.85rem;
+  color: #777;
+  margin: 0.1rem 0 0.4rem;
+}
+
+.project-card ul {
+  margin: 0.3rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.project-more {
+  margin-top: 1rem;
+}
+
+/* People section */
+
+.people-more {
+  margin-top: 0.6rem;
+}
+
+/* 通用按钮样式 */
+
+.btn-link {
+  display: inline-block;
+  font-size: 0.95rem;
+  text-decoration: none;
+  color: #0070f3;
+  padding-bottom: 0.05rem;
+  border-bottom: 1px solid rgba(0, 112, 243, 0.4);
+}
+
+.btn-link:hover {
+  color: #0052b3;
+  border-bottom-color: rgba(0, 82, 179, 0.8);
+}
+
+/* Home 页的响应式 */
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 1.7rem;
+  }
+
+  .research-grid,
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+.site-footer {
+  margin-top: 3rem;
+  background: #f5f5f7;
+  border-top: 1px solid #e0e0e0;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.footer-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 2fr) minmax(0, 2fr);
+  gap: 1.5rem;
+}
+
+.footer-column h3,
+.footer-column h4 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.footer-lab-name-en {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.footer-lab-name-cn {
+  margin: 0.15rem 0 0.4rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.footer-affiliation {
+  margin: 0;
+}
+
+.footer-address {
+  margin: 0 0 0.4rem;
+}
+
+.footer-contact-list,
+.footer-link-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.2rem 0 0;
+}
+
+.footer-contact-list li,
+.footer-link-list li {
+  margin-bottom: 0.2rem;
+}
+
+.footer-link-list a {
+  color: #444;
+  text-decoration: none;
+}
+
+.footer-link-list a:hover {
+  color: #0070f3;
+  text-decoration: underline;
+}
+
+.footer-wechat {
+  margin-top: 0.5rem;
+}
+
+.footer-wechat img {
+  width: 96px;
+  height: auto;
+  display: block;
+  border: 1px solid #ddd;
+}
+
+/* 底部细条 */
+.footer-bottom {
+  border-top: 1px solid #e0e0e0;
+  padding: 0.75rem 1.5rem 1rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #777;
+}
+
+/* Mobile: 三列改成一列 */
+@media (max-width: 768px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========================= */
+/* Publications page         */
+/* ========================= */
+
+.pub-year {
+  margin-top: 2rem;
+  margin-bottom: 0.4rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-left: 4px solid #0070f3;
+  padding-left: 0.6rem;
+}
+
+/* 第一年的年份和标题之间距离略小 */
+.pub-year:first-of-type {
+  margin-top: 1.5rem;
+}
+
+.pub-list {
+  list-style: none;
+  margin: 0 0 0.8rem;
+  padding: 0;
+}
+
+.pub-item {
+  position: relative;
+  padding-left: 1.2rem;
+  margin-bottom: 0.75rem;
+}
+
+/* 小圆点（比普通 bullet 更精致一点） */
+.pub-item::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0.2rem;
+  font-size: 0.9rem;
+  color: #999;
+}
+
+.pub-title {
+  font-weight: 600;
+  color: #111;
+}
+
+.pub-authors {
+  display: inline-block;
+  margin-top: 0.1rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.pub-venue {
+  display: inline-block;
+  margin-top: 0.1rem;
+  font-size: 0.9rem;
+  color: #777;
+  font-style: italic;
+}
+
+/* 论文链接样式，如 [paper], [code] */
+.pub-item a {
+  font-size: 0.9rem;
+  margin-left: 0.25rem;
+  text-decoration: none;
+  color: #0070f3;
+}
+
+.pub-item a:hover {
+  text-decoration: underline;
+  color: #0052b3;
+}
+
+/* 如果之后想加标签，比如 [Best Paper]，可以用 span.pub-tag */
+.pub-tag {
+  display: inline-block;
+  margin-left: 0.35rem;
+  padding: 0.05rem 0.35rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  background: #ffe9b3;
+  color: #8a5a00;
+}
+
+/* Publications 页的顶部标题 */
+.page-title {
+  margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* 移动端微调：减少左右空白，年份与条目更紧凑 */
+@media (max-width: 768px) {
+  .pub-year {
+    margin-top: 1.5rem;
+  }
+
+  .pub-item {
+    margin-bottom: 0.6rem;
+  }
+}
+
+
+/* ========================= */
+/* Projects page             */
+/* ========================= */
+
+.projects-page {
+  margin-top: 0.5rem;
+}
+
+.project-grid-page {
+  margin-top: 1.2rem;
+}
+
+/* 复用首页的 project-card 样式，在此基础上稍微更信息化一点 */
+.project-card-page {
+  background: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  padding: 1.2rem 1.3rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.project-card-page:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.project-title {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.project-title a {
+  text-decoration: none;
+  color: #111;
+}
+
+.project-title a:hover {
+  color: #0070f3;
+}
+
+.project-short {
+  margin: 0.35rem 0 0.4rem;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.project-meta-line {
+  margin: 0.2rem 0 0.3rem;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.project-meta-label {
+  font-weight: 600;
+}
+
+.project-meta-sep {
+  margin: 0 0.3rem;
+  color: #ccc;
+}
+
+.project-status {
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 0.05rem 0.35rem;
+  border-radius: 999px;
+  background: #e6f3ff;
+  color: #0052b3;
+}
+
+/* 标签样式 */
+.project-tags {
+  margin: 0.2rem 0 0.4rem;
+}
+
+.project-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  padding: 0.05rem 0.4rem;
+  border-radius: 999px;
+  background: #f0f0f4;
+  color: #555;
+  margin-right: 0.25rem;
+  margin-bottom: 0.15rem;
+}
+
+/* “View project details” 链接位置 */
+.project-more-link {
+  margin-top: 0.2rem;
+}
+
+/* 响应式：中小屏时变单列，更易读 */
+@media (max-width: 768px) {
+  .project-grid.project-grid-page {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card-page {
+    padding: 1rem 1.05rem;
+  }
+}
+
+/* ========================= */
+/* People page               */
+/* ========================= */
+
+.people-role {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.people-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.3rem 1.6rem;
+}
+
+.people-card {
+  display: flex;
+  gap: 1.1rem;
+  align-items: center;
+  padding: 0.8rem 0.6rem;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #e7e7e7;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.people-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .06);
+}
+
+.people-photo img {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #ddd;
+}
+
+.people-name {
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.people-email {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0.2rem 0 0.4rem;
+}
+
+.people-interests {
+  margin: 0;
+  padding-left: 1rem;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.people-interests li {
+  margin-bottom: 0.1rem;
+}
+
+/* Mobile */
+@media(max-width:768px) {
+  .people-grid {
+    grid-template-columns: 1fr;
+  }
+}

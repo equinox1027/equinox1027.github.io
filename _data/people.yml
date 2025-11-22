@@ -1,0 +1,28 @@
+- role: Faculty
+  members:
+    - name: "金雄男"
+      email: "xxx@szu.edu.cn"
+      homepage: "https://xxx"
+      img: ""
+      interests:
+        - Symbolic reasoning
+        - Knowledge graphs
+        - Explainable AI
+
+
+- role: Postdoctoral Researchers
+  members:
+    - name: "Wang Wu"
+      email: "xxx@gmail.com"
+      img: ""
+      interests:
+        - KG construction
+        - IR
+
+- role: Master Students
+  members:
+    - name: "Chen Liu"
+      email: ""
+      img: ""
+      interests:
+        - TBD
