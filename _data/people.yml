@@ -3,11 +3,11 @@
     - name: "金雄男"
       email: "xxx@szu.edu.cn"
       homepage: "https://xxx"
-      img: ""
+      img: "jinxiongnan.jpg"
       interests:
         - Symbolic reasoning
         - Knowledge graphs
-        - Explainable AI
+        - Knowledge-Enhanced LLMs
 
 
 - role: Postdoctoral Researchers
