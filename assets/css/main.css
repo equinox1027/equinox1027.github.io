@@ -1,9 +1,36 @@
+/* ========================= */
+/* CSS Variables (Tech Blue) */
+/* ========================= */
+:root {
+  --primary-color: #0066cc;
+  /* Main Tech Blue */
+  --primary-hover: #0052a3;
+  /* Darker Blue for hover */
+  --accent-color: #00f0ff;
+  /* Cyan/Neon blue accent for faint glows */
+  --bg-color: #f4f7f9;
+  /* Very faint cool grayish-blue background */
+  --text-main: #222222;
+  --text-muted: #666666;
+  --card-bg: #ffffff;
+  --border-light: #e3ebf0;
+
+  /* Shared Shadows & Transitions */
+  --shadow-sm: 0 2px 8px rgba(0, 102, 204, 0.04);
+  --shadow-hover: 0 6px 20px rgba(0, 102, 204, 0.12);
+  --glow-hover: 0 0 10px rgba(0, 240, 255, 0.15);
+  /* Tech glow */
+  --transition-fast: 0.2s ease-out;
+  --transition-normal: 0.3s ease;
+}
+
 /* 让整个页面别太贴边 */
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.6;
+  background-color: var(--bg-color);
+  color: var(--text-main);
 }
 
 /* 限制内容宽度 */
@@ -18,8 +45,12 @@ main {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: #ffffff;
-  border-bottom: 1px solid #eee;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  /* Added slight blur */
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-light);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
 }
 
 /* nav 内部左右排布 */
@@ -55,18 +86,20 @@ main {
 
 .nav-link {
   text-decoration: none;
-  color: #333;
+  color: var(--text-muted);
   font-size: 0.95rem;
+  transition: color var(--transition-fast);
 }
 
 .nav-link:hover {
-  color: #0070f3;
+  color: var(--primary-color);
 }
 
 /* 当前页面高亮 */
 .nav-link-active {
   font-weight: 600;
-  border-bottom: 2px solid #0070f3;
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
   padding-bottom: 0.1rem;
 }
 
@@ -90,45 +123,76 @@ main {
 
 .hero {
   margin-bottom: 2.5rem;
+  padding: 3rem 2.5rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(244, 247, 249, 0.5) 100%);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 32px rgba(0, 102, 204, 0.05), inset 0 2px 0 rgba(255, 255, 255, 1);
+  backdrop-filter: blur(12px);
 }
 
 .hero-kicker {
-  font-size: 0.9rem;
-  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #666;
-  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+  background: rgba(0, 102, 204, 0.08);
+  display: inline-block;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 1.2rem;
+  border: 1px solid rgba(0, 102, 204, 0.15);
 }
 
 .hero-title {
-  font-size: 2.1rem;
-  margin: 0 0 0.75rem;
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin: 0 0 1rem;
+  background: linear-gradient(135deg, #111111 20%, var(--primary-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: #111;
+  /* fallback */
+  line-height: 1.2;
 }
 
 .hero-subtitle {
-  margin: 0.3rem 0;
-  font-size: 1rem;
+  margin: 0.4rem 0;
+  font-size: 1.15rem;
   color: #444;
+  font-weight: 400;
 }
 
 .hero-subtitle-cn {
-  font-size: 0.95rem;
-  color: #555;
+  font-size: 1.05rem;
+  color: var(--text-muted);
 }
 
 /* 通用 section 样式 */
 
 .home-section {
   margin-bottom: 2.5rem;
+  padding: 2rem 2.5rem;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
 }
 
+/* 首页主区域因为里面有卡片，本身边框就够了，我们可以让内部距离稍微再协调一点 */
 .home-section h2 {
-  font-size: 1.4rem;
-  margin-bottom: 0.8rem;
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+  color: var(--primary-color);
+  border-bottom: 1px dashed var(--border-light);
+  padding-bottom: 0.5rem;
 }
 
-.home-section p {
-  margin: 0.3rem 0;
+.home-section>p {
+  margin: 0.6rem 0;
 }
 
 /* Research section */
@@ -141,15 +205,24 @@ main {
 }
 
 .research-card {
-  padding: 1.1rem 1.2rem;
-  border-radius: 8px;
-  border: 1px solid #e0e0e0;
-  background: #fafafa;
+  padding: 1.3rem 1.4rem;
+  border-radius: 10px;
+  border: 1px solid var(--border-light);
+  background: var(--card-bg);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+}
+
+.research-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover), var(--glow-hover);
+  border-color: rgba(0, 102, 204, 0.3);
 }
 
 .research-card h3 {
   margin-top: 0;
   font-size: 1.05rem;
+  color: var(--primary-color);
 }
 
 .research-card ul {
@@ -182,10 +255,18 @@ main {
 }
 
 .project-card {
-  padding: 1.1rem 1.2rem;
-  border-radius: 8px;
-  border: 1px solid #e0e0e0;
-  background: #ffffff;
+  padding: 1.3rem 1.4rem;
+  border-radius: 10px;
+  border: 1px solid var(--border-light);
+  background: var(--card-bg);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover), var(--glow-hover);
+  border-color: rgba(0, 102, 204, 0.3);
 }
 
 .project-card h3 {
@@ -214,20 +295,28 @@ main {
   margin-top: 0.6rem;
 }
 
-/* 通用按钮样式 */
-
 .btn-link {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-size: 0.95rem;
+  font-weight: 500;
   text-decoration: none;
-  color: #0070f3;
-  padding-bottom: 0.05rem;
-  border-bottom: 1px solid rgba(0, 112, 243, 0.4);
+  color: var(--primary-color);
+  background: transparent;
+  padding: 0.5rem 1.3rem;
+  border-radius: 999px;
+  /* Pill shape for a modern premium feel */
+  border: 1px solid var(--primary-color);
+  transition: all var(--transition-normal);
 }
 
 .btn-link:hover {
-  color: #0052b3;
-  border-bottom-color: rgba(0, 82, 179, 0.8);
+  color: #ffffff;
+  background: var(--primary-color);
+  border-color: var(--primary-hover);
+  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.25);
+  transform: translateY(-2px);
 }
 
 /* Home 页的响应式 */
@@ -246,11 +335,11 @@ main {
 
 
 .site-footer {
-  margin-top: 3rem;
-  background: #f5f5f7;
-  border-top: 1px solid #e0e0e0;
+  margin-top: 4rem;
+  background: #ffffff;
+  border-top: 1px solid var(--border-light);
   font-size: 0.9rem;
-  color: #444;
+  color: var(--text-muted);
 }
 
 .footer-inner {
@@ -305,7 +394,7 @@ main {
 }
 
 .footer-link-list a:hover {
-  color: #0070f3;
+  color: var(--primary-color);
   text-decoration: underline;
 }
 
@@ -345,7 +434,7 @@ main {
   margin-bottom: 0.4rem;
   font-size: 1.1rem;
   font-weight: 700;
-  border-left: 4px solid #0070f3;
+  border-left: 4px solid var(--primary-color);
   padding-left: 0.6rem;
 }
 
@@ -396,17 +485,33 @@ main {
   font-style: italic;
 }
 
-/* 论文链接样式，如 [paper], [code] */
 .pub-item a {
   font-size: 0.9rem;
   margin-left: 0.25rem;
   text-decoration: none;
-  color: #0070f3;
+  color: var(--primary-color);
+  transition: color var(--transition-fast);
 }
 
 .pub-item a:hover {
   text-decoration: underline;
-  color: #0052b3;
+  color: var(--primary-hover);
+}
+
+/* 动感高亮的作者名字 */
+.author-highlight {
+  font-weight: 700 !important;
+  color: var(--primary-color) !important;
+  padding: 0 2px;
+  background: rgba(0, 102, 204, 0.05);
+  border-radius: 4px;
+}
+
+.author-highlight:hover {
+  text-decoration: none !important;
+  color: #fff !important;
+  background: var(--primary-color);
+  box-shadow: 0 2px 6px rgba(0, 102, 204, 0.3);
 }
 
 /* 如果之后想加标签，比如 [Best Paper]，可以用 span.pub-tag */
@@ -416,8 +521,10 @@ main {
   padding: 0.05rem 0.35rem;
   border-radius: 999px;
   font-size: 0.75rem;
-  background: #ffe9b3;
-  color: #8a5a00;
+  background: rgba(0, 102, 204, 0.1);
+  /* light blue bg */
+  color: var(--primary-hover);
+  font-weight: 500;
 }
 
 /* Publications 页的顶部标题 */
@@ -458,31 +565,33 @@ main {
 
 /* 复用首页的 project-card 样式，在此基础上稍微更信息化一点 */
 .project-card-page {
-  background: #ffffff;
+  background: var(--card-bg);
   border-radius: 10px;
-  border: 1px solid #e0e0e0;
-  padding: 1.2rem 1.3rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
-  transition: box-shadow 0.15s ease, transform 0.15s ease;
+  border: 1px solid var(--border-light);
+  padding: 1.3rem 1.4rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
 }
 
 .project-card-page:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover), var(--glow-hover);
+  border-color: rgba(0, 102, 204, 0.3);
 }
 
 .project-title {
   margin: 0;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
 }
 
 .project-title a {
   text-decoration: none;
-  color: #111;
+  color: var(--text-main);
+  transition: color var(--transition-fast);
 }
 
 .project-title a:hover {
-  color: #0070f3;
+  color: var(--primary-color);
 }
 
 .project-short {
@@ -525,8 +634,9 @@ main {
   font-size: 0.8rem;
   padding: 0.05rem 0.4rem;
   border-radius: 999px;
-  background: #f0f0f4;
-  color: #555;
+  background: rgba(0, 102, 204, 0.08);
+  /* Faint blue tag */
+  color: var(--primary-hover);
   margin-right: 0.25rem;
   margin-bottom: 0.15rem;
 }
@@ -566,18 +676,20 @@ main {
 
 .people-card {
   display: flex;
-  gap: 1.1rem;
+  gap: 1.2rem;
   align-items: center;
-  padding: 0.8rem 0.6rem;
-  background: #fff;
-  border-radius: 10px;
-  border: 1px solid #e7e7e7;
-  transition: transform .15s ease, box-shadow .15s ease;
+  padding: 1rem;
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
 }
 
 .people-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, .06);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover), var(--glow-hover);
+  border-color: rgba(0, 102, 204, 0.3);
 }
 
 .people-photo img {

@@ -1,3 +1,9 @@
+- year: 2026
+  papers:
+    - title: "Image-Guided Debiasing Distillation with Preference Alignment Across Multi-News Histories"
+      authors: "Jimyeung Seo, Eun-Yeong Jo, Hye-Yoon Baek, Dongcheon Lee, Xiongnan Jin, Byungkook Oh"
+      venue: "WSDM 2026"
+      url: "https://dl.acm.org/doi/abs/10.1145/3773966.3777983"
 - year: 2025
   papers:
     - title: "Relation-Faceted Graph Pooling with LLM Guidance for Dynamic Span-Aware Information Extraction"
@@ -8,10 +14,72 @@
       authors: "Hye-Yoon Baek, Jinho Choi, Jimyeung Seo, Xiongnan Jin, Dongcheon Lee, Byungkook Oh"
       venue: "CIKM 2025"
       url: "https://dl.acm.org/doi/abs/10.1145/3746252.3761186"
-
+    - title: "STLSP: Integrating Structure and Text with Large Language Models for Link Sign Prediction of Networks"
+      authors: "Lijia Ma, Haoyang Fu, Zhijie Cao, Xiongnan Jin, Qiuzhen Lin, Jianqiang Li"
+      venue: "IJCAI 2025"
+      url: "https://www.ijcai.org/proceedings/2025/0354.pdf"
+      code: "https://github.com/sss483/STLSP"
+    - title: "HLMEA: Unsupervised entity alignment based on hybrid language models"
+      authors: "Xiongnan Jin, Zhilin Wang, Jinpeng Chen, Liu Yang, Byungkook Oh, Seung-won Hwang, Jianqiang Li"
+      venue: "AAAI 2025"
+      url: "https://ojs.aaai.org/index.php/AAAI/article/view/33294"
+      code: "https://github.com/xnjin-ai/HLMEA"
+    - title: "Method for task execution based on knowledge graph obtained through entity alignment"
+      authors: "JIN Xiongnan, WANG Yongheng, WANG Jiawei, YAN Xiaoran"
+      venue: "US Patent App. 18580105"
+      url: "https://patents.google.com/patent/US20250085888A1/en"
+    - title: "A survey on knowledge graph evolution: proliferation, dynamic embedding, and versioning"
+      authors: "Xiongnan Jin, Zhilin Wang, Manni Duan, Yan Shao, Xingyun Hong, Yongheng Wang, Byungkook Oh"
+      venue: "IJWGS 2025"
+      url: "https://doi.org/10.1504/IJWGS.2025.144974"
 - year: 2024
   papers:
-    - title: "xxx"
-      authors: "xxx"
-      venue: "xxx"
-      url: "xxx"
+    - title: "Towards building a robust knowledge intensive question answering model with large language models"
+      authors: "Xingyun Hong, Yan Shao, Zhilin Wang, Manni Duan, Xiongnan Jin"
+      venue: "NLPCC 2024"
+      url: "https://link.springer.com/chapter/10.1007/978-981-97-9431-7_18"
+    - title: "PACIFIC: enhancing sequential recommendation via preference-aware causal intervention and counterfactual data augmentation"
+      authors: "Jinpeng Chen, Huachen Guan, Huan Li, Fan Zhang, Liwei Huang, Guangyao Pang, Xiongnan Jin"
+      venue: "CIKM 2024"
+      url: "https://dl.acm.org/doi/abs/10.1145/3627673.3679803"
+    - title: "Htccn: Temporal causal convolutional networks with hawkes process for extrapolation reasoning in temporal knowledge graphs"
+      authors: "Tingxuan Chen, Jun Long, Liu Yang, Zidong Wang, Yongheng Wang, Xiongnan Jin"
+      venue: "NAACL 2024"
+      url: "https://aclanthology.org/2024.naacl-long.225/"
+    - title: "EMPNet: An extract-map-predict neural network architecture for cross-domain recommendation"
+      authors: "Jinpeng Chen, Fan Zhang, Huan Li, Hua Lu, Xiongnan Jin, Kuien Liu, Hongjun Li, Yongheng Wang"
+      venue: "WWW 2024"
+      url: "https://link.springer.com/article/10.1007/s11280-024-01240-z"
+    - title: "A deep spatiotemporal trajectory representation learning framework for clustering"
+      authors: "Chao Wang, Jiahui Huang, Yongheng Wang, Zhengxuan Lin, Xiongnan Jin, Xing Jin, Di Weng, Yingcai Wu"
+      venue: "TITS 2024"
+      url: "https://ieeexplore.ieee.org/abstract/document/10403544"
+- year: 2023
+  papers:
+    - title: "Mandari: Multi-modal temporal knowledge graph-aware sub-graph embedding for next-poi recommendation"
+      authors: "Xiaoqian Liu, Xiuyun Li, Yuan Cao, Fan Zhang, Xiongnan Jin, Jinpeng Chen"
+      venue: "ICME 2023"
+      url: "https://ieeexplore.ieee.org/abstract/document/10219947"
+- year: 2022
+  papers:
+    - title: "MFC-Prov: Media forensics challenge image provenance evaluation and data analysis on large-scale datasets"
+      authors: "Xiongnan Jin, Yooyoung Lee, Jonathan Fiscus, Haiying Guan, Amy N Yates, Andrew Delgado, Daniel F Zhou"
+      venue: "Neurocomputing 2022"
+      url: "https://www.sciencedirect.com/science/article/pii/S0925231221015289"
+- year: 2021
+  papers:
+    - title: "DORIC: discovering topological relations based on spatial link composition"
+      authors: "Xiongnan Jin, Sungkwang Eom, Sangjin Shin, Kyong-Ho Lee, Chaoqun Hong"
+      venue: "KIS 2021"
+      url: "https://link.springer.com/article/10.1007/s10115-021-01603-2"
+- year: 2020
+  papers:
+    - title: "Designing an integrated knowledge graph for smart energy services"
+      authors: "Sejin Chun, Jooik Jung, Xiongnan Jin, Seungmin Seo, Kyong-Ho Lee"
+      venue: "J Supercomput 2020"
+      url: "https://link.springer.com/article/10.1007/s11227-018-2672-3"
+    - title: "Efficient generation of spatiotemporal relationships from spatial data streams and static data"
+      authors: "Sungkwang Eom, Xiongnan Jin, Kyong-Ho Lee"
+      venue: "Information Processing & Management 2020"
+      url: "https://www.sciencedirect.com/science/article/pii/S0306457319302845"
+

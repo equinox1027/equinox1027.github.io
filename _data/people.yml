@@ -1,8 +1,12 @@
-- role: Faculty
+- role: Principal Investigator
   members:
     - name: "金雄男"
+      name_en: 
+        - "Xiongnan Jin"
+        - "JIN Xiongnan"
+        - "X. Jin"
       email: "xxx@szu.edu.cn"
-      homepage: "https://xxx"
+      homepage: "https://scholar.google.com/citations?hl=zh-CN&user=xqEmRngAAAAJ&view_op=list_works&sortby=pubdate"
       img: "jinxiongnan.jpg"
       interests:
         - Symbolic reasoning
@@ -10,19 +14,28 @@
         - Knowledge-Enhanced LLMs
 
 
-- role: Postdoctoral Researchers
+- role: Team Members
   members:
-    - name: "Wang Wu"
-      email: "xxx@gmail.com"
+    - name: "高杨子健"
+      name_en: 
+        - "Yangzijian Gao"
+        - "YANGZIJIAN Gao"
+        - "Y. Gao"
+      email: "419542554@qq.com"
       img: ""
       interests:
-        - KG construction
-        - IR
-
-- role: Master Students
-  members:
-    - name: "Chen Liu"
+        - Knowledge boundary
+        - Knowledge-Enhanced LLMs 
+    - name: "梅甜甜"
+      name_en: 
+        - "Mei Tiantian"
+        - "MEI TIANTIAN"
+        - "M. Mei"
       email: ""
       img: ""
       interests:
-        - TBD
+        - Knowledge Distillation
+        - Knowledge-Enhanced LLMs   
+
+
+

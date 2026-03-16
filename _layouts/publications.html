@@ -15,7 +15,32 @@ layout: default
     {% for p in group.papers %}
     <li class="pub-item">
       <span class="pub-title">{{ p.title }}</span><br>
-      <span class="pub-authors">{{ p.authors }}</span><br>
+
+      {% assign authors_formatted = p.authors %}
+      {% for member_group in site.data.people %}
+      {% for member in member_group.members %}
+
+      {% capture member_link %}<a href="{{ '/people/' | relative_url }}" class="author-highlight">{{ member.name
+        }}</a>{% endcapture %}
+      {% assign authors_formatted = authors_formatted | replace: member.name, member_link %}
+
+      {% if member.name_en %}
+            {% assign en_names = member.name_en %}
+            {% assign type = en_names | first %}
+            {% if type.size == 0 or type == nil %}
+               {% assign en_names = en_names | split: "|||" %}
+            {% endif %}
+
+            {% for en_name in en_names %}
+              {% capture member_en_link %}<a href="{{ '/people/' | relative_url }}" class="author-highlight">{{ en_name }}</a>{% endcapture %}
+              {% assign authors_formatted = authors_formatted | replace: en_name, member_en_link %}
+            {% endfor %}
+          {% endif %}
+
+      {% endfor %}
+      {% endfor %}
+
+      <span class="pub-authors">{{ authors_formatted }}</span><br>
       <span class="pub-venue">{{ p.venue }}</span>
       {% if p.url %}
       <a href="{{ p.url }}" target="_blank" rel="noopener">[paper]</a>
