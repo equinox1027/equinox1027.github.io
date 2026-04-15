@@ -9,7 +9,7 @@ layout: default
   </p>
 
   {% for group in site.data.publications %}
-  <h2 class="pub-year">{{ group.year }}</h2>
+  <h2 class="pub-year"><i class="far fa-calendar-alt"></i> {{ group.year }}</h2>
 
   <ul class="pub-list">
     {% for p in group.papers %}
@@ -43,10 +43,10 @@ layout: default
       <span class="pub-authors">{{ authors_formatted }}</span><br>
       <span class="pub-venue">{{ p.venue }}</span>
       {% if p.url %}
-      <a href="{{ p.url }}" target="_blank" rel="noopener">[paper]</a>
+      <a href="{{ p.url }}" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> [paper]</a>
       {% endif %}
       {% if p.code %}
-      <a href="{{ p.code }}" target="_blank" rel="noopener">[code]</a>
+      <a href="{{ p.code }}" target="_blank" rel="noopener"><i class="fas fa-code"></i> [code]</a>
       {% endif %}
       {% if p.note %}
       <span class="pub-tag">{{ p.note }}</span>

@@ -6,7 +6,7 @@
       <a href="{{ '/' | relative_url }}">
         <!-- 如果暂时没有 logo 图片，可以先只放文字 -->
         <!-- <img src="{{ '/assets/img/logo.svg' | relative_url }}" alt="Lab Logo"> -->
-        <span class="logo-text">Neuro-Symbolic AI Lab</span>
+        <span class="logo-text"><i class="fas fa-network-wired" style="color: var(--primary-color);"></i> Neuro-Symbolic AI Lab</span>
       </a>
     </div>
 
@@ -18,7 +18,7 @@
         {% assign item_url = item.link | relative_url %}
         <li class="nav-item">
           <a href="{{ item_url }}" class="nav-link{% if current == item_url %} nav-link-active{% endif %}">
-            {{ item.name }}
+            {% if item.icon %}<i class="{{ item.icon }}"></i> {% endif %}{{ item.name }}
           </a>
         </li>
         {% endfor %}

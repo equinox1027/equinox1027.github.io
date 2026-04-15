@@ -28,13 +28,13 @@
 
       <ul class="footer-contact-list">
         {% if lab.email_general %}
-        <li>Email (Lab): <a href="mailto:{{ lab.email_general }}">{{ lab.email_general }}</a></li>
+        <li><i class="fas fa-envelope"></i> Email (Lab): <a href="mailto:{{ lab.email_general }}">{{ lab.email_general }}</a></li>
         {% endif %}
         {% if lab.email_pi %}
-        <li>Email (PI): <a href="mailto:{{ lab.email_pi }}">{{ lab.email_pi }}</a></li>
+        <li><i class="fas fa-envelope"></i> Email (PI): <a href="mailto:{{ lab.email_pi }}">{{ lab.email_pi }}</a></li>
         {% endif %}
         {% if lab.phone %}
-        <li>Phone: {{ lab.phone }}</li>
+        <li><i class="fas fa-phone"></i> Phone: {{ lab.phone }}</li>
         {% endif %}
       </ul>
     </div>
@@ -43,15 +43,15 @@
     <div class="footer-column footer-links">
       <h4>Links</h4>
       <ul class="footer-link-list">
-        <li><a href="{{ '/' | relative_url }}">Home</a></li>
-        <li><a href="{{ '/people/' | relative_url }}">People</a></li>
-        <!-- <li><a href="{{ '/projects/' | relative_url }}">Projects</a></li> -->
-        <li><a href="{{ '/publications/' | relative_url }}">Publications</a></li>
+        <li><a href="{{ '/' | relative_url }}"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="{{ '/people/' | relative_url }}"><i class="fas fa-users"></i> People</a></li>
+        <!-- <li><a href="{{ '/projects/' | relative_url }}"><i class="fas fa-laptop-code"></i> Projects</a></li> -->
+        <li><a href="{{ '/publications/' | relative_url }}"><i class="fas fa-book-open"></i> Publications</a></li>
         {% if lab.website_cn %}
-        <li><a href="{{ lab.website_cn }}" target="_blank" rel="noopener">Chinese Website</a></li>
+        <li><a href="{{ lab.website_cn }}" target="_blank" rel="noopener"><i class="fas fa-globe"></i> Chinese Website</a></li>
         {% endif %}
         {% if lab.github %}
-        <li><a href="{{ lab.github }}" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="{{ lab.github }}" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a></li>
         {% endif %}
       </ul>
 

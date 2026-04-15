@@ -729,3 +729,61 @@ main {
     grid-template-columns: 1fr;
   }
 }
+
+/* Icon Customizations */
+i.fas,
+i.fab,
+i.far {
+  margin-right: 0.25rem;
+}
+
+.logo-text i.fas {
+  margin-right: 0.4rem;
+}
+
+.research-card h3 i {
+  color: var(--primary-color);
+  margin-right: 0.35rem;
+}
+
+.pub-year i {
+  color: var(--primary-color);
+  margin-right: 0.4rem;
+}
+
+/* Neuro-Symbolic Highlight Box */
+.highlight-box {
+  background: linear-gradient(135deg, rgba(0, 102, 204, 0.05) 0%, rgba(0, 240, 255, 0.03) 100%);
+  border-left: 4px solid var(--primary-color);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.highlight-box h3 {
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  font-size: 1.25rem;
+}
+
+.highlight-box p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Fusion Grid Layout */
+.fusion-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media(max-width: 900px) {
+  .fusion-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media(max-width: 600px) {
+  .fusion-grid {
+    grid-template-columns: 1fr;
+  }
+}

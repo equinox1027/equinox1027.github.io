@@ -1,8 +1,12 @@
 - name: Home
+  icon: fas fa-home
   link: /
 - name: Publications
+  icon: fas fa-book-open
   link: /publications
 - name: Projects
+  icon: fas fa-laptop-code
   link: /projects
 - name: People
+  icon: fas fa-users
   link: /people
